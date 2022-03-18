@@ -2,7 +2,8 @@ import API from './api';
 
 export {
     getAllMovies,
-    addNewBookmark
+    addNewBookmark,
+    getSingleMovie
 }
 
 function getAllMovies() {
@@ -14,3 +15,7 @@ function addNewBookmark(email, movie){
         email,
         movie}).then(result => result.data);
 }
+
+function getSingleMovie(idmovie) {
+    return API.get('/movies/'+idmovie).then(res => res.data);
+ }
